@@ -10,7 +10,7 @@ export default {
   },
   methods: {
     initchart() {
-      let data = require("C:/Users/magic/Documents/vscode/vue/VuetifyProject/src/data/netw_lv_1_kmeans_4_Clust_4fe.json");
+      let data = require("../data/netw_lv_1_kmeans_4_Clust_4fe.json");
       let width = 960;
       let height = 450;
       new ForceBar(data, width, height);
