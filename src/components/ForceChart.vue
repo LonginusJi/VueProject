@@ -1,6 +1,6 @@
 <template>
   <div>
-    <svg width="660" height="600" />
+    <svg id="ForceChart" width="660" height="600" />
   </div>
 </template>
 
@@ -8,11 +8,11 @@
 import * as d3 from "d3";
 export default {
   mounted() {
-    var svg = d3.select("svg"),
+    var svg = d3.select("#ForceChart"),
       width = +svg.attr("width"),
       height = +svg.attr("height");
 
-    var color = d3.scaleOrdinal(d3.schemeCategory20);
+    // var color = d3.scaleOrdinal(d3.schemeCategory20b);
 
     var simulation = d3
       .forceSimulation()
@@ -25,10 +25,7 @@ export default {
       .force("charge", d3.forceManyBody())
       .force("center", d3.forceCenter(width / 2, height / 2));
 
-    d3.json(
-      "https://gist.githubusercontent.com/mbostock/4062045/raw/5916d145c8c048a6e3086915a6be464467391c62/miserables.json"
-    ).then(function(error, graph) {
-      if (error) throw error;
+    const graph = require("../data/miserables.json")
 
       var link = svg
         .append("g")
@@ -53,9 +50,9 @@ export default {
       node
         .append("circle")
         .attr("r", 5)
-        .attr("fill", function(d) {
-          return color(d.group);
-        })
+        // .attr("fill", function(d) {
+        //   return color(d.group);
+        // })
         .call(
           d3
             .drag()
@@ -102,7 +99,7 @@ export default {
           return "translate(" + d.x + "," + d.y + ")";
         });
       }
-    });
+    
 
     function dragstarted(d) {
       if (!d3.event.active) simulation.alphaTarget(0.3).restart();
