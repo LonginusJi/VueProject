@@ -1,5 +1,5 @@
 <template>
-  <svg />
+  <svg id="ForceBar"/>
 </template>
 <script>
 import ForceBar from "./ForceBar";
