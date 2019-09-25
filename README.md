@@ -1,4 +1,10 @@
-# vue-test
+# Introduction
+This is my first vue project inclding 4 charts using Vuetify, d3, Highcharts.
+Four charts include : 
+1 Force chart
+2 Divided force chart
+3 Highchart 
+4 Circle chart
 
 ## Project setup
 ```
