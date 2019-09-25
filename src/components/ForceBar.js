@@ -4,7 +4,7 @@ export default class ForceBar {
     constructor(data, width, height) {
         this.height = height;
         this.width = width;
-        this.svg = d3.select('svg')
+        this.svg = d3.select('#ForceBar')
             .attr("width", width)
             .attr("height", height);
 
