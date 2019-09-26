@@ -21,10 +21,6 @@ export default class CircleChart {
     }
 
     initdata(data) {
-        data.forEach(d => {
-            d.gdpPercap = +d.gdpPercap;
-            d.pop = +d.pop;
-        });
         data.sort((a, b) => (d3.descending(a.pop, b.pop)));//DEscending 
         let newData = [];
         for (let i = 0; i <= 9; i++) { newData.push(data[i]); }
@@ -137,7 +133,7 @@ export default class CircleChart {
         // What to do when one group is hovered
         let highlight = d => {
             // reduce opacity of all groups
-            d3.selectAll(".bubbles").style("opacity", 0.05);
+            d3.selectAll(".bubbles").style("opacity", 0.1);
             // expect the one that is hovered
             d3.selectAll("." + d).style("opacity", 1);
         };
