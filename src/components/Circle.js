@@ -103,7 +103,7 @@ export default class CircleChart {
             .attr("y1", d => (this.height - 150 - this.radius(d)))
             .attr("y2", d => (this.height - 150 - this.radius(d)))
             .attr("stroke", "black")
-            .style("stroke-dasharray", "2,2");
+            .attr("stroke-dasharray", "2,2");
 
         // Add legend: labels
         legend_pop
@@ -217,6 +217,8 @@ export default class CircleChart {
             .attr("y1", this.height / 2)
             .attr("x2", (d, i) => (Math.cos(this.angle * (i + 1)) * 9 * this.radius(d.pop) + this.width / 2))
             .attr("y2", (d, i) => (Math.sin(this.angle * (i + 1)) * 9 * this.radius(d.pop) + this.height / 2))
-            .attr('stroke-dasharray', ('5, 3'));
+            .attr('stroke', '#999')
+            .attr('stroke-width', 1.5)
+            .attr('stroke-dasharray', ('5, 5'));
     }
 }

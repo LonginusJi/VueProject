@@ -35,9 +35,4 @@ svg .bubbles {
 .bubbles:hover {
   stroke: black;
 }
-
-.links {
-  stroke: #999;
-  stroke-width: 1.5px;
-}
 </style>
