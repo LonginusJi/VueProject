@@ -2,7 +2,7 @@
   <v-app>
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase d-flex align-center">
-        <span>&nbsp;Test Project</span>
+        <span>&nbsp;Contribute by Jerry</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn flat>
