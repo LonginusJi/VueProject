@@ -1,6 +1,6 @@
 <template>
   <div>
-    <svg id="ForceChart" width="760" height="800" />
+    <svg id="ForceChart" width="760" height="600" />
   </div>
 </template>
 
