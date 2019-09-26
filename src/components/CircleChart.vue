@@ -1,5 +1,5 @@
 <template>
-  <div id="CircleChart" style="text-align:center"></div>
+  <div class="chart" id="CircleChart" style="text-align:center"></div>
 </template>
 
 <script>

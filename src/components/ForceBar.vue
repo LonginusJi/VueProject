@@ -1,5 +1,7 @@
 <template>
-  <svg id="ForceBar" />
+  <div class="chart">
+    <svg id="ForceBar" />
+  </div>
 </template>
 <script>
 import ForceBar from "./ForceBar";
@@ -23,5 +25,9 @@ export default {
   fill: #d62333;
   stroke: #fff;
   stroke-width: 1px;
+}
+#ForceBar {
+  display: block;
+  margin: 50px auto;
 }
 </style>

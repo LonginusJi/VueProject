@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="chart" id="HighChart">
     <highcharts :options="options" ref="highcharts"></highcharts>
   </div>
 </template>
@@ -7,9 +7,6 @@
 <script>
 import Highcharts from "highcharts/highstock";
 export default {
-  mixins: [],
-  components: {},
-  props: {},
   data() {
     return {
       options: {
@@ -18,9 +15,6 @@ export default {
         },
         title: {
           text: "世界人口总量"
-        },
-        subtitle: {
-          text: "数据来自网络"
         },
         xAxis: {
           categories: ["巴西", "印尼", "美国", "印度", "中国", "世界人口(万)"],
@@ -78,6 +72,8 @@ export default {
   }
 };
 </script>
-
 <style>
+highcharts {
+  margin: 50px auto;
+}
 </style>

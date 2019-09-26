@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style>
-svg {
+.chart {
   display: block;
   margin: 50px auto;
 }

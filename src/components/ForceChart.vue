@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="chart">
     <svg id="ForceChart" width="760" height="600" />
   </div>
 </template>
@@ -117,3 +117,10 @@ export default {
   }
 };
 </script>
+
+<style>
+#ForceChart {
+  display: block;
+  margin: 50px auto;
+}
+</style>
