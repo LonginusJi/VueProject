@@ -2,17 +2,17 @@
 This is my first vue project inclding 4 charts using Vuetify, d3, Highcharts.  
 
   
-## 1 Force chart  
-![](https://github.com/LonginusJi/VueProject/raw/master/img/ForceChart.png"Force Chart")  
+## 1 Force Chart  
+![](https://github.com/LonginusJi/VueProject/raw/master/img/ForceChart.png "Force Chart")  
 
-## 2 Divided force chart  
-![](https://github.com/LonginusJi/VueProject/raw/master/img/DividedForce.png)  
+## 2 Divided Force Chart  
+![](https://github.com/LonginusJi/VueProject/raw/master/img/DividedForce.png "Divided Force Chart")  
 
 ## 3 Highchart   
-![](https://github.com/LonginusJi/VueProject/raw/master/img/Highchart.png)  
+![](https://github.com/LonginusJi/VueProject/raw/master/img/Highchart.png "Highchart")  
 
-## 4 Circle chart  
-![](https://github.com/LonginusJi/VueProject/raw/master/img/CircleChart.png)  
+## 4 Circle Chart  
+![](https://github.com/LonginusJi/VueProject/raw/master/img/CircleChart.png "Circle Chart")  
 
 Enjoy Yourself!!!
 
