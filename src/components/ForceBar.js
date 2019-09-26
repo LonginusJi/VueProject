@@ -112,6 +112,8 @@ export default class ForceBar {
             .selectAll("line")
             .data(this.links)
             .join('line')
+            .attr('stroke', '#999')
+            .attr('stroke-opacity', 0.8);
     }
 
     plotNode() {
@@ -122,7 +124,7 @@ export default class ForceBar {
 
         this.node = this.svg
             .append("g")
-            .attr("class", "nodes")
+            .attr("class", "barNodes")
             .selectAll("circle")
             .data(this.nodes)
             .join("circle")
@@ -177,6 +179,9 @@ export default class ForceBar {
             .attr("x", d => this.xGravity(d))
             .attr("y", this.height - 10)
             .attr("dy", "0.35em")
+            .attr('font-size', 14)
+            .attr('font-family', 'Times New Roman')
+            .attr('text-anchor', 'middle')
             .text(d => "Vol. " + d);
     }
 
@@ -190,6 +195,9 @@ export default class ForceBar {
             .attr("x1", d => this.xMax(d))
             .attr("y1", 0)
             .attr("x2", d => this.xMax(d))
-            .attr("y2", this.height);
+            .attr("y2", this.height)
+            .attr('stroke', '#333')
+            .attr('stroke-width', 1)
+            .attr('stroke-dasharray', '10,10');
     }
 }
