@@ -22,7 +22,6 @@ export default {
 </script>
 <style>
 .barNodes circle {
-  fill: #d62333;
   stroke: #fff;
   stroke-width: 1px;
 }

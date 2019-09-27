@@ -117,6 +117,7 @@ export default class ForceBar {
     }
 
     plotNode() {
+        let color = d3.scaleOrdinal(d3.schemeDark2);
         this.nodes.sort((a, b) => b.w - a.w);
         this.nodeRadius = d3.scaleSqrt()
             .domain([this.nodes[this.nodes.length - 1].w, this.nodes[0].w])
@@ -128,6 +129,7 @@ export default class ForceBar {
             .selectAll("circle")
             .data(this.nodes)
             .join("circle")
+            .attr('fill', d => color(d.belogsToClust))
             .attr("r", d => this.nodeRadius(d.belogsToClust))
             .call(this.drag);
         this.node.append("title").text(d => d.label);
