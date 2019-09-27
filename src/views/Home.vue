@@ -6,14 +6,14 @@
       <span class="caption grey--text text--darken-1">Please enter a password for your account</span>
     </v-card-text>
     <v-btn @click="logIn">Log In</v-btn>
-    <v-alert type="error" v-model="show" dismissible>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password Wrong</v-alert>
+    <v-alert type="info" v-model="show" dismissible>You can add "/Chart" after the local address</v-alert>
   </v-card>
 </template>
 
 <script>
 export default {
   data() {
-    return { username: "", password: "", show: "", dismissible: "true" };
+    return { username: "", password: "", show: "" };
   },
   methods: {
     logIn() {
@@ -37,5 +37,9 @@ export default {
 #logIn {
   margin: 10%;
   text-align: center;
+}
+.v-alert .v-alert__icon.v-icon,
+.v-alert__dismissible .v-icon {
+  color: #fff;
 }
 </style>
