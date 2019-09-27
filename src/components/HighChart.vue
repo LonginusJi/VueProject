@@ -17,9 +17,21 @@ export default {
           text: "World Population"
         },
         xAxis: {
-          categories: ["Brazil", "Indonesia", "USA", "India", "China", "World Population<br>(Ten thousand)"],
+          categories: [
+            "Brazil",
+            "Japan",
+            "USA",
+            "India",
+            "China",
+            "World Population"
+          ],
           title: {
-            text: null
+            text: "Country"
+          },
+          labels: {
+            style: {
+              fontSize: 14
+            }
           }
         },
         yAxis: {
@@ -29,11 +41,14 @@ export default {
             align: "high"
           },
           labels: {
-            overflow: "justify"
+            overflow: "justify",
+            style: {
+              fontSize: 14
+            }
           }
         },
         tooltip: {
-          valueSuffix: " millions"
+          valueSuffix: " Million"
         },
         plotOptions: {
           bar: {
@@ -59,12 +74,16 @@ export default {
         },
         series: [
           {
-            name: "2011",
-            data: [18203, 23489, 29034, 104970, 131744, 630230]
+            name: "2000",
+            data: [175, 127, 282, 1057, 1263, 6302]
           },
           {
-            name: "2012",
-            data: [19325, 23438, 31000, 121594, 134141, 681807]
+            name: "2010",
+            data: [196, 128, 309, 1234, 1338, 6818]
+          },
+          {
+            name: "2018",
+            data: [209, 127, 327, 1352, 1392, 7594]
           }
         ]
       }
