@@ -14,10 +14,10 @@ export default {
           type: "bar"
         },
         title: {
-          text: "世界人口总量"
+          text: "World Population"
         },
         xAxis: {
-          categories: ["巴西", "印尼", "美国", "印度", "中国", "世界人口(万)"],
+          categories: ["Brazil", "Indonesia", "USA", "India", "China", "World Population<br>(Ten thousand)"],
           title: {
             text: null
           }
@@ -25,7 +25,7 @@ export default {
         yAxis: {
           min: 0,
           title: {
-            text: "人口（百万）",
+            text: "Population（Million）",
             align: "high"
           },
           labels: {
