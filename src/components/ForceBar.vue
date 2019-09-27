@@ -8,10 +8,10 @@ import ForceBar from "./ForceBar";
 
 export default {
   mounted() {
-    this.initchart();
+    this.initForceBar();
   },
   methods: {
-    initchart() {
+    initForceBar() {
       let data = require("../data/netw_lv_1_kmeans_4_Clust_4fe.json");
       let width = 960;
       let height = 450;

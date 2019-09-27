@@ -2,7 +2,7 @@
   <div class="charts">
     <v-tabs fixed-tabs background-color="indigo" dark grow>
       <v-tab>Force Chart</v-tab>
-      <v-tab>Divided Force</v-tab>
+      <v-tab>Force Chart(Divided)</v-tab>
       <v-tab>Bar Chart</v-tab>
       <v-tab>Circle Chart</v-tab>
       <v-tab-item>
