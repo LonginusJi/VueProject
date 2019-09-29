@@ -11,7 +11,7 @@ export default class ForceBar {
         this.initData(data);
         this.initSimulation();
         this.initDrag();
-        this.plotlink();
+        this.plotLink();
         this.plotNode();
         this.plotLabel();
         this.plotBar();
@@ -29,8 +29,8 @@ export default class ForceBar {
             .domain(this.volumes)
             .range(
                 d3
-                    .range(0, this.volumes.length)
-                    .map(d => this.width / (2 * this.volumes.length) + (d * this.width) / this.volumes.length)
+                .range(0, this.volumes.length)
+                .map(d => this.width / (2 * this.volumes.length) + (d * this.width) / this.volumes.length)
             );
 
         this.xMax = d3
@@ -66,15 +66,15 @@ export default class ForceBar {
             .force(
                 "forceX",
                 d3.forceX()
-                    .strength(0.33)
-                    .x(d => this.xGravity(d.belogsToClust))
+                .strength(0.33)
+                .x(d => this.xGravity(d.belogsToClust))
             )
             .force(
                 "forceY",
                 d3
-                    .forceY()
-                    .strength(0.15)
-                    .y(this.height / 2)
+                .forceY()
+                .strength(0.15)
+                .y(this.height / 2)
             );
 
     }
@@ -105,7 +105,7 @@ export default class ForceBar {
             .on("end", dragEnd);
     }
 
-    plotlink() {
+    plotLink() {
         this.link = this.svg
             .append("g")
             .attr("class", "links")
