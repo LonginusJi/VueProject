@@ -2,7 +2,12 @@ import * as d3 from "d3";
 export default class CircleChart {
     constructor(data) {
         // set the dimensions and margins of the graph
-        let margin = { top: 40, right: 150, bottom: 60, left: 30 };
+        let margin = {
+            top: 40,
+            right: 150,
+            bottom: 60,
+            left: 30
+        };
         this.width = 600 - margin.left - margin.right;
         this.height = 500 - margin.top - margin.bottom;
         // append the svg object to the body of the page
@@ -12,18 +17,20 @@ export default class CircleChart {
             .attr("width", this.width + margin.left + margin.right)
             .attr("height", this.height + margin.top + margin.bottom)
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-        this.initdata(data)
+        this.initData(data)
         this.initLegend_pop()
-        this.initLegend_contry()
+        this.initLegend_country()
         this.initTooltip()
         this.plotLinks()
         this.plotCircles()
     }
 
-    initdata(data) {
-        data.sort((a, b) => (d3.descending(a.pop, b.pop)));//DEscending 
+    initData(data) {
+        data.sort((a, b) => (d3.descending(a.pop, b.pop))); //DEscending 
         let newData = [];
-        for (let i = 0; i <= 9; i++) { newData.push(data[i]); }
+        for (let i = 0; i <= 9; i++) {
+            newData.push(data[i]);
+        }
         this.data = newData;
         let angleNum = this.data.length - 1;
         this.angle = (2 * Math.PI) / angleNum;
@@ -59,7 +66,7 @@ export default class CircleChart {
         this.showTooltip = d => (
             tooltip
                 .style("opacity", 1)
-                .html("Country: " + d.country + ", Continent: " + d.continent + ", Popilation: " + d.pop / 1000000 + "M")
+                .html("Country: " + d.country + ", Continent: " + d.continent + ", Population: " + d.pop / 1000000 + "M")
             // .style("left", d3.mouse(this)[0] + 30 + "px")
             // .style("top", d3.mouse(this)[1] + 30 + "px");
         );
@@ -125,7 +132,7 @@ export default class CircleChart {
             .style('font-size', 14)
             .attr("text-anchor", "middle");
     }
-    initLegend_contry() {
+    initLegend_country() {
         // ---------------------------//
         //       HIGHLIGHT GROUP      //
         // ---------------------------//
