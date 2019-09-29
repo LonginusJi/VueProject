@@ -9,7 +9,14 @@
         <ForceChart></ForceChart>
       </v-tab-item>
       <v-tab-item>
-        <ForceBar></ForceBar>
+        <v-btn
+          class="ma-2 white--text"
+          @click="useForceBar(),loader = 'loading'"
+          :loading="loading"
+          :disabled="loading"
+          color="blue-grey"
+        >InitForceChart</v-btn>
+        <ForceBar ref="child"></ForceBar>
       </v-tab-item>
       <v-tab-item>
         <HighChart></HighChart>
@@ -27,11 +34,34 @@ import ForceChart from "../components/ForceChart.vue";
 import CircleChart from "../components/CircleChart.vue";
 import ForceBar from "../components/ForceBar.vue";
 export default {
+  data() {
+    return {
+      loader: null,
+      loading: false
+    };
+  },
   components: {
     ForceChart,
     CircleChart,
     HighChart,
     ForceBar
+  },
+  methods: {
+    useForceBar: function() {
+      setTimeout(() => {
+        this.$refs.child.initForceBar();
+      }, 1000);
+    }
+  },
+  watch: {
+    loader() {
+      let l = this.loader;
+      this[l] = !this[l];
+
+      setTimeout(() => (this[l] = false), 1000);
+
+      this.loader = null;
+    }
   }
 };
 </script>

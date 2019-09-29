@@ -7,9 +7,9 @@
 import ForceBar from "./ForceBar";
 
 export default {
-  mounted() {
-    this.initForceBar();
-  },
+  // mounted() {
+  //   this.initForceBar();
+  // },
   methods: {
     initForceBar() {
       let data = require("../data/netw_lv_1_kmeans_4_Clust_4fe.json");
