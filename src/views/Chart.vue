@@ -15,11 +15,11 @@
           :loading="loading"
           :disabled="loading"
           color="blue-grey"
-        >InitForceChart</v-btn>
+        >Draw Chart</v-btn>
         <ForceBar ref="child"></ForceBar>
       </v-tab-item>
       <v-tab-item>
-        <HighChart></HighChart>
+        <HighChart></HighChart>>
       </v-tab-item>
       <v-tab-item>
         <CircleChart></CircleChart>
