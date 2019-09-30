@@ -11,11 +11,12 @@
       <v-tab-item>
         <v-btn
           class="ma-2 white--text"
-          @click="useForceBar(),loader = 'loading'"
+          @click="drawForceBar(),loader = 'loading'"
           :loading="loading"
           :disabled="loading"
           color="blue-grey"
         >Draw Chart</v-btn>
+        <v-btn @click="clear()">Clear Chart</v-btn>
         <ForceBar ref="child"></ForceBar>
       </v-tab-item>
       <v-tab-item>
@@ -47,10 +48,13 @@ export default {
     ForceBar
   },
   methods: {
-    useForceBar: function() {
+    drawForceBar() {
       setTimeout(() => {
         this.$refs.child.initForceBar();
       }, 1000);
+    },
+    clear() {
+      this.$refs.child.clearAll();
     }
   },
   watch: {
