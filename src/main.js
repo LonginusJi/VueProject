@@ -5,8 +5,7 @@ import router from './router'
 import store from './store'
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
-import HighchartsVue from 'highcharts-vue'
-
+import HighchartsVue from 'highcharts-vue'// use the highcharts tag in HighChart.vue
 
 Vue.config.productionTip = false
 
