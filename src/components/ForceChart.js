@@ -11,8 +11,8 @@ export default class ForceChart {
         this.initData(graph);
         this.initSimulation();
         this.initDrag();
-        this.plotNode();
         this.plotLink();
+        this.plotNode();
         this.plotText();
     }
 
@@ -64,10 +64,9 @@ export default class ForceChart {
             .attr("class", "nodes")
             .selectAll("g")
             .data(this.nodes)
-            .join("g");
-
+            .join("g")
         this.node
-            .append("circle")
+            .append('circle')
             .attr("r", 5)
             .attr("fill", d => color(d.group))
             .attr("stroke", "#fff")
@@ -102,7 +101,9 @@ export default class ForceChart {
             .attr("y", 3)
             .style("font-size", 12)
             .style("font-family", "Times New Roman");
-        this.node.append("title").text(d => d.id);
+        this.node
+            .append("title")
+            .text(d => d.id);
     }
 
     ticked() {
