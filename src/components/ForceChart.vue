@@ -12,9 +12,11 @@ export default {
   },
   methods: {
     initForceChart() {
-      let width = 760;
-      let height = 600;
-      let graph = require("../data/miserables.json");
+      let [graph, width, height] = [
+        require("../data/miserables.json"),
+        760,
+        600
+      ];
       new ForceChart(graph, width, height);
     }
   }

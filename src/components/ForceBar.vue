@@ -20,9 +20,11 @@ export default {
         .remove();
     },
     initForceBar() {
-      let data = require("../data/netw_lv_1_kmeans_4_Clust_4fe.json");
-      let width = 960;
-      let height = 450;
+      let [data, width, height] = [
+        require("../data/netw_lv_1_kmeans_4_Clust_4fe.json"),
+        960,
+        450
+      ];
       new ForceBar(data, width, height);
     }
   }
