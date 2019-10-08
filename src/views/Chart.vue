@@ -1,10 +1,7 @@
 <template>
   <div class="charts">
     <v-tabs fixed-tabs background-color="indigo" dark grow>
-      <v-tab>Force Chart</v-tab>
-      <v-tab>Force Chart(Divided)</v-tab>
-      <v-tab>Bar Chart</v-tab>
-      <v-tab>Circle Chart</v-tab>
+      <v-tab v-for="item in items" :key="item">{{ item }}</v-tab>
       <v-tab-item>
         <ForceChart></ForceChart>
       </v-tab-item>
@@ -37,6 +34,12 @@ import ForceBar from "../components/ForceBar.vue";
 export default {
   data() {
     return {
+      items: [
+        "Force Chart",
+        "Force Chart(Divided)",
+        "Bar Chart",
+        "Circle Chart"
+      ],
       loader: null,
       loading: false
     };
@@ -50,20 +53,18 @@ export default {
   methods: {
     drawForceBar() {
       setTimeout(() => {
-        this.$refs.child.initForceBar();// use function in ForceBar.vue
+        this.$refs.child.initForceBar(); // use function in ForceBar.vue
       }, 1000);
     },
     clear() {
-      this.$refs.child.clearAll();// use function in ForceBar.vue
+      this.$refs.child.clearAll(); // use function in ForceBar.vue
     }
   },
   watch: {
     loader() {
       let l = this.loader;
       this[l] = !this[l];
-
       setTimeout(() => (this[l] = false), 1000);
-
       this.loader = null;
     }
   }
