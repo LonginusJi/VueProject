@@ -141,12 +141,7 @@ export default class ForceBar {
     }
 
     tick() {
-        let height = this.height;
-        let xMax = this.xMax;
-        let xMin = this.xMin;
-        let nodeRadius = this.nodeRadius;
-        let link = this.link;
-        let node = this.node;
+        let [height, xMax, xMin, link, node, nodeRadius] = [this.height, this.xMax, this.xMin, this.link, this.node, this.nodeRadius];
 
         this.nodes.forEach(d => {
             // Viewport constraint.
