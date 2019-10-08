@@ -17,7 +17,7 @@
         <ForceBar ref="child"></ForceBar>
       </v-tab-item>
       <v-tab-item>
-        <HighChart></HighChart>>
+        <HighChart></HighChart>
       </v-tab-item>
       <v-tab-item>
         <CircleChart></CircleChart>

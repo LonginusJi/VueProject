@@ -1,5 +1,5 @@
 # Introduction
-This is my first vue project inclding 4 charts using Vuetify, d3, Highcharts.  
+This is my first vue project including 4 charts using Vuetify, d3, Highcharts.  
 
   
 ## 1 Force Chart  
