@@ -50,11 +50,11 @@ export default {
   methods: {
     drawForceBar() {
       setTimeout(() => {
-        this.$refs.child.initForceBar();
+        this.$refs.child.initForceBar();// use function in ForceBar.vue
       }, 1000);
     },
     clear() {
-      this.$refs.child.clearAll();
+      this.$refs.child.clearAll();// use function in ForceBar.vue
     }
   },
   watch: {
