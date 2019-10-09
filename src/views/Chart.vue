@@ -3,52 +3,24 @@
     <v-tabs fixed-tabs background-color="indigo" dark grow>
       <v-tab v-for="item in items" :key="item">{{ item }}</v-tab>
       <v-tab-item>
-        <v-parallax
-          dark
-          style="height:763px"
-          src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
-        >
-          <ForceChart></ForceChart>
-        </v-parallax>
+        <ForceChart></ForceChart>
       </v-tab-item>
       <v-tab-item>
-        <v-parallax
-          dark
-          style="height:713.5px"
-          src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
-        >
-          <v-row align="center" justify="center">
-            <v-btn
-              class="ma-2 white--text"
-              @click="drawForceBar(),loader = 'loading'"
-              :loading="loading"
-              :disabled="loading"
-              color="blue-grey"
-            >Draw Chart</v-btn>
-            <v-btn @click="clear()">Clear Chart</v-btn>
-            <ForceBar ref="ForceBar"></ForceBar>
-          </v-row>
-        </v-parallax>
+        <v-btn
+          class="ma-2 white--text"
+          @click="drawForceBar(),loader = 'loading'"
+          :loading="loading"
+          :disabled="loading"
+          color="blue-grey"
+        >Draw Chart</v-btn>
+        <v-btn @click="clear()">Clear Chart</v-btn>
+        <ForceBar ref="ForceBar"></ForceBar>
       </v-tab-item>
       <v-tab-item>
-        <v-parallax
-          dark
-          style="height:713.5px"
-          src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
-        >
-          <v-row align="center" justify="center">
-            <HighChart></HighChart>
-          </v-row>
-        </v-parallax>
+        <HighChart></HighChart>
       </v-tab-item>
       <v-tab-item>
-        <v-parallax
-          dark
-          style="height:713.5px"
-          src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
-        >
-          <CircleChart></CircleChart>
-        </v-parallax>
+        <CircleChart></CircleChart>
       </v-tab-item>
     </v-tabs>
   </div>
