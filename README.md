@@ -1,7 +1,9 @@
 # Introduction
 This is my first vue project including 4 charts using Vuetify, d3, Highcharts.  
 
-  
+## LogIn
+ ![](https://github.com/LonginusJi/VueProject/raw/master/img/LogIn.png "Formidable")  
+
 ## 1 Force Chart  
 ![](https://github.com/LonginusJi/VueProject/raw/master/img/ForceChart.png "Force Chart")  
 
