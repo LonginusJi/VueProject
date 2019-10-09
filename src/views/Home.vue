@@ -13,7 +13,7 @@
 <script>
 export default {
   data() {
-    return { username: null, password: null, show: null };
+    return { username: '', password: '', show: '' };
   },
   methods: {
     logIn() {
