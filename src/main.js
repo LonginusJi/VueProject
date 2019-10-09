@@ -16,3 +16,4 @@ new Vue({
   store,
   render: h => h(App),
 }).$mount('#app')
+document.body.parentNode.style.overflowY = "hidden";
