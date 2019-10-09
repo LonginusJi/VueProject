@@ -81,7 +81,7 @@ export default class CircleChart {
             tooltip.style('opacity', 0)
         );
     }
-    // ---------------------------//    
+    // ---------------------------//
     //          LEGEND            //
     // ---------------------------//
     initLegend_pop() {

@@ -1,11 +1,11 @@
 <template>
-  <div class="chart">
-    <svg id="ForceChart" />
+  <div class='chart'>
+    <svg id='ForceChart'/>
   </div>
 </template>
 
 <script>
-import ForceChart from "./ForceChart";
+import ForceChart from './ForceChart';
 export default {
   mounted() {
     this.initForceChart();
@@ -13,9 +13,9 @@ export default {
   methods: {
     initForceChart() {
       let [graph, width, height] = [
-        require("../data/miserables.json"),
+        require('../data/miserables.json'),
         760,
-        600
+        600,
       ];
       new ForceChart(graph, width, height);
     }

@@ -1,26 +1,26 @@
 <template>
-  <v-card max-width="500" class="mx-auto" id="logIn">
+  <v-card max-width='500' class='mx-auto' id='logIn'>
     <v-card-text>
-      <v-text-field label="Username" type="text" v-model="username"></v-text-field>
-      <v-text-field label="Password" type="password" v-model="password"></v-text-field>
-      <span class="caption grey--text text--darken-1">Please enter a password for your account</span>
+      <v-text-field label='Username' type='text' v-model='username'></v-text-field>
+      <v-text-field label='Password' type='password' v-model='password'></v-text-field>
+      <span class='caption grey--text text--darken-1'>Please enter a password for your account</span>
     </v-card-text>
-    <v-btn @click="logIn">Log In</v-btn>
-    <v-alert type="info" v-model="show" dismissible>You can add "/Chart" after the local address</v-alert>
+    <v-btn @click='logIn'>Log In</v-btn>
+    <v-alert type='info' v-model='show' dismissible>You can add '/Chart' after the local address</v-alert>
   </v-card>
 </template>
 
 <script>
 export default {
   data() {
-    return { username: "", password: "", show: "" };
+    return { username: null, password: null, show: null };
   },
   methods: {
     logIn() {
       a: if (this.password.length >= 5) {
         for (var i = 0; i < this.password.length; i++) {
-          if (this.password.slice(i, i + 5) == "magic") {
-            this.$router.push({ path: "/Chart" });
+          if (this.password.slice(i, i + 5) == 'magic') {
+            this.$router.push({ path: '/Chart' });
             break a;
           }
         }

@@ -1,22 +1,23 @@
-import * as d3 from "d3";
+import * as d3 from 'd3';
 
 export default class ForceBar {
     constructor(data, width, height) {
         this.height = height;
         this.width = width;
         this.svg = d3.select('#ForceBar')
-            .attr("width", width)
-            .attr("height", height);
-
+            .attr('width', width)
+            .attr('height', height);
         this.initData(data);
         this.initSimulation();
         this.initDrag();
         this.plotLink();
         this.plotNode();
         this.plotLabel();
-        this.plotBar();
+        this.plotLine();
     }
-
+    // ---------------------------//
+    //           DATA             //
+    // ---------------------------//
     initData(data) {
         this.data = data;
         this.nodes = this.data.nodes;
@@ -47,7 +48,9 @@ export default class ForceBar {
                 d3.range(0, this.volumes.length).map(d => (d * this.width) / this.volumes.length)
             );
     }
-
+    // ---------------------------//
+    //        SIMULATION          //
+    // ---------------------------//
     initSimulation() {
         let linkForce = d3
             .forceLink()
@@ -61,24 +64,25 @@ export default class ForceBar {
         this.forceSim = d3
             .forceSimulation()
             .velocityDecay(0.2)
-            .force("link", linkForce)
-            .force("charge", d3.forceManyBody())
+            .force('link', linkForce)
+            .force('charge', d3.forceManyBody())
             .force(
-                "forceX",
+                'forceX',
                 d3.forceX()
                 .strength(0.33)
                 .x(d => this.xGravity(d.belogsToClust))
             )
             .force(
-                "forceY",
+                'forceY',
                 d3
                 .forceY()
                 .strength(0.15)
                 .y(this.height / 2)
             );
-
     }
-
+    // ---------------------------//
+    //           DRAG             //
+    // ---------------------------//
     initDrag() {
         let forceSim = this.forceSim
         let dragStart = d => {
@@ -100,22 +104,26 @@ export default class ForceBar {
 
         this.drag = d3
             .drag()
-            .on("start", dragStart)
-            .on("drag", dragging)
-            .on("end", dragEnd);
+            .on('start', dragStart)
+            .on('drag', dragging)
+            .on('end', dragEnd);
     }
-
+    // ---------------------------//
+    //           LINK             //
+    // ---------------------------//
     plotLink() {
         this.link = this.svg
-            .append("g")
-            .attr("class", "links")
-            .selectAll("line")
+            .append('g')
+            .attr('class', 'links')
+            .selectAll('line')
             .data(this.links)
             .join('line')
             .attr('stroke', '#999')
             .attr('stroke-opacity', 0.8);
     }
-
+    // ---------------------------//
+    //           NODE             //
+    // ---------------------------//
     plotNode() {
         let color = d3.scaleOrdinal(d3.schemeDark2);
         this.nodes.sort((a, b) => b.w - a.w);
@@ -124,22 +132,22 @@ export default class ForceBar {
             .range([6, 10]);
 
         this.node = this.svg
-            .append("g")
-            .attr("class", "barNodes")
-            .selectAll("circle")
+            .append('g')
+            .attr('class', 'barNodes')
+            .selectAll('circle')
             .data(this.nodes)
-            .join("circle")
+            .join('circle')
             .attr('fill', d => color(d.belogsToClust))
-            .attr("r", d => this.nodeRadius(d.belogsToClust))
+            .attr('r', d => this.nodeRadius(d.belogsToClust))
             .call(this.drag);
-        this.node.append("title").text(d => d.label);
+        this.node.append('title').text(d => d.label);
 
-        this.forceSim.nodes(this.nodes).on("tick", this.tick.bind(this));
+        this.forceSim.nodes(this.nodes).on('tick', this.tick.bind(this));
         this.forceSim.force('link').links(this.links);
-
-
     }
-
+    // ---------------------------//
+    //           TICK             //
+    // ---------------------------//
     tick() {
         let [height, xMax, xMin, link, node, nodeRadius] = [this.height, this.xMax, this.xMin, this.link, this.node, this.nodeRadius];
 
@@ -156,43 +164,46 @@ export default class ForceBar {
         });
 
         link
-            .attr("x1", d => d.source.x)
-            .attr("x2", d => d.target.x)
-            .attr("y1", d => d.source.y)
-            .attr("y2", d => d.target.y);
-
+            .attr('x1', d => d.source.x)
+            .attr('x2', d => d.target.x)
+            .attr('y1', d => d.source.y)
+            .attr('y2', d => d.target.y);
         node
-            .attr("cx", d => d.x)
-            .attr("cy", d => d.y);
+            .attr('cx', d => d.x)
+            .attr('cy', d => d.y);
     }
-
+    // ---------------------------//
+    //           LABEL            //
+    // ---------------------------//
     plotLabel() {
         this.svg
-            .append("g")
-            .attr("class", "labels")
-            .selectAll("text")
+            .append('g')
+            .attr('class', 'labels')
+            .selectAll('text')
             .data(this.volumes)
-            .join("text")
-            .attr("x", d => this.xGravity(d))
-            .attr("y", this.height - 10)
-            .attr("dy", "0.35em")
+            .join('text')
+            .attr('x', d => this.xGravity(d))
+            .attr('y', this.height - 10)
+            .attr('dy', '0.35em')
             .attr('font-size', 14)
             .attr('font-family', 'Times New Roman')
             .attr('text-anchor', 'middle')
-            .text(d => "Vol. " + d);
+            .text(d => 'Vol. ' + d);
     }
-
-    plotBar() {
+    // ---------------------------//
+    //           LINE             //
+    // ---------------------------//
+    plotLine() {
         this.svg
-            .append("g")
-            .attr("class", "bars")
-            .selectAll("line")
+            .append('g')
+            .attr('class', 'bars')
+            .selectAll('line')
             .data(this.volumes.slice(0, this.volumes.length - 1))
-            .join("line")
-            .attr("x1", d => this.xMax(d))
-            .attr("y1", 0)
-            .attr("x2", d => this.xMax(d))
-            .attr("y2", this.height)
+            .join('line')
+            .attr('x1', d => this.xMax(d))
+            .attr('y1', 0)
+            .attr('x2', d => this.xMax(d))
+            .attr('y2', this.height)
             .attr('stroke', '#333')
             .attr('stroke-width', 1)
             .attr('stroke-dasharray', '10,10');
