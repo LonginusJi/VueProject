@@ -1,5 +1,5 @@
 <template>
-  <div class="charts">
+  <div>
     <v-tabs fixed-tabs background-color="indigo" dark grow>
       <v-tab v-for="item in items" :key="item">{{ item }}</v-tab>
       <v-tab-item>
