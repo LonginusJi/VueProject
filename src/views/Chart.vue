@@ -14,7 +14,7 @@
       <v-tab-item>
         <v-parallax
           dark
-          style="height:713px"
+          style="height:713.5px"
           src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
         >
           <v-row align="center" justify="center">
@@ -33,7 +33,7 @@
       <v-tab-item>
         <v-parallax
           dark
-          style="height:713px"
+          style="height:713.5px"
           src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
         >
           <v-row align="center" justify="center">
@@ -42,10 +42,9 @@
         </v-parallax>
       </v-tab-item>
       <v-tab-item>
-        <
         <v-parallax
           dark
-          style="height:693px"
+          style="height:713.5px"
           src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
         >
           <CircleChart></CircleChart>
