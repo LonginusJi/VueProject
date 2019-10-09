@@ -1,10 +1,10 @@
 <template>
-  <div class="chart" id="CircleChart" style="text-align:center"></div>
+  <div class='chart' id='CircleChart' style='text-align:center'></div>
 </template>
 
 <script>
-import CircleChart from "./Circle";
-import * as d3 from "d3";
+import CircleChart from './Circle';
+import * as d3 from 'd3';
 export default {
   mounted() {
     this.initchart();
@@ -12,7 +12,7 @@ export default {
   methods: {
     initchart() {
       d3.csv(
-        "https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/4_ThreeNum.csv"
+        'https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/4_ThreeNum.csv'
       ).then(data => {
         data.forEach(d => {
           d.gdpPercap = +d.gdpPercap;
