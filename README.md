@@ -14,7 +14,7 @@ This is my first vue project including 4 charts using Vuetify, d3, Highcharts.
 ## 4 Circle Chart  
 ![](https://github.com/LonginusJi/VueProject/raw/master/img/CircleChart.png "Circle Chart")  
 
-Enjoy Yourself!!!
+## Enjoy Yourself!!!
 
 ## Project setup
 ```
