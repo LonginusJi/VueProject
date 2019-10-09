@@ -14,8 +14,8 @@ export default {
     initForceChart() {
       let [graph, width, height] = [
         require('../data/miserables.json'),
-        760,
-        600,
+        1460,
+        700,
       ];
       new ForceChart(graph, width, height);
     }
