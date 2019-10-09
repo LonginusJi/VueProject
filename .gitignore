@@ -1,4 +1,5 @@
 .DS_Store
+picture
 .history
 node_modules
 /dist

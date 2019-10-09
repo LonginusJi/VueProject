@@ -1,44 +1,73 @@
 <template>
-  <div class='charts'>
-    <v-tabs fixed-tabs background-color='indigo' dark grow>
-      <v-tab v-for='item in items' :key='item'>{{ item }}</v-tab>
+  <div class="charts">
+    <v-tabs fixed-tabs background-color="indigo" dark grow>
+      <v-tab v-for="item in items" :key="item">{{ item }}</v-tab>
       <v-tab-item>
-        <ForceChart></ForceChart>
+        <v-parallax
+          dark
+          style="height:763px"
+          src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+        >
+          <ForceChart></ForceChart>
+        </v-parallax>
       </v-tab-item>
       <v-tab-item>
-        <v-btn
-          class='ma-2 white--text'
-          @click="drawForceBar(),loader = 'loading'"
-          :loading='loading'
-          :disabled='loading'
-          color='blue-grey'
-        >Draw Chart</v-btn>
-        <v-btn @click='clear()'>Clear Chart</v-btn>
-        <ForceBar ref='ForceBar'></ForceBar>
+        <v-parallax
+          dark
+          style="height:713px"
+          src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+        >
+          <v-row align="center" justify="center">
+            <v-btn
+              class="ma-2 white--text"
+              @click="drawForceBar(),loader = 'loading'"
+              :loading="loading"
+              :disabled="loading"
+              color="blue-grey"
+            >Draw Chart</v-btn>
+            <v-btn @click="clear()">Clear Chart</v-btn>
+            <ForceBar ref="ForceBar"></ForceBar>
+          </v-row>
+        </v-parallax>
       </v-tab-item>
       <v-tab-item>
-        <HighChart></HighChart>
+        <v-parallax
+          dark
+          style="height:713px"
+          src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+        >
+          <v-row align="center" justify="center">
+            <HighChart></HighChart>
+          </v-row>
+        </v-parallax>
       </v-tab-item>
       <v-tab-item>
-        <CircleChart></CircleChart>
+        <
+        <v-parallax
+          dark
+          style="height:693px"
+          src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+        >
+          <CircleChart></CircleChart>
+        </v-parallax>
       </v-tab-item>
     </v-tabs>
   </div>
 </template>
 
 <script>
-import HighChart from '../components/HighChart.vue';
-import ForceChart from '../components/ForceChart.vue';
-import CircleChart from '../components/CircleChart.vue';
-import ForceBar from '../components/ForceBar.vue';
+import HighChart from "../components/HighChart.vue";
+import ForceChart from "../components/ForceChart.vue";
+import CircleChart from "../components/CircleChart.vue";
+import ForceBar from "../components/ForceBar.vue";
 export default {
   data() {
     return {
       items: [
-        'Force Chart',
-        'Force Chart(Divided)',
-        'Bar Chart',
-        'Circle Chart'
+        "Force Chart",
+        "Force Chart(Divided)",
+        "Bar Chart",
+        "Circle Chart"
       ],
       loader: null,
       loading: false
@@ -72,6 +101,12 @@ export default {
 </script>
 
 <style>
+.v-parallax {
+  overflow: visible;
+}
+.v-parallax__image-container {
+  contain: none;
+}
 .chart {
   display: block;
   margin: 50px auto;
