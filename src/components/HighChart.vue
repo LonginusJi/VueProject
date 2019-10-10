@@ -93,6 +93,6 @@ export default {
 </script>
 <style>
 #HighChart {
-  margin: 0px 35px 0px 0px ;
+  margin: 50px 30px 0px 0px ;
 }
 </style>
