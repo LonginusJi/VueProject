@@ -1,19 +1,17 @@
 <template>
-  <div class='chart' id='CircleChart' style='text-align:center'></div>
+  <div class="chart" id="CircleChart" style="text-align:center"></div>
 </template>
 
 <script>
-import CircleChart from './Circle';
-import * as d3 from 'd3';
+import CircleChart from "./Circle";
+import * as d3 from "d3";
 export default {
   mounted() {
     this.initchart();
   },
   methods: {
     initchart() {
-      d3.csv(
-        'http://127.0.0.1:5500/src/data/circle_chart.csv'
-      ).then(data => {
+      d3.csv("http://127.0.0.1:5500/src/data/circle_chart.csv").then(data => {
         data.forEach(d => {
           d.gdpPercap = +d.gdpPercap;
           d.pop = +d.pop;
@@ -26,6 +24,9 @@ export default {
 </script>
 
 <style>
+#CircleChart {
+  margin: 40px auto;
+}
 svg .bubbles {
   stroke-width: 1px;
   stroke: black;

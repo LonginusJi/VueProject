@@ -30,7 +30,7 @@ export default {
           },
           labels: {
             style: {
-              fontSize: 14
+              fontSize: 16
             }
           }
         },
@@ -43,7 +43,7 @@ export default {
           labels: {
             overflow: "justify",
             style: {
-              fontSize: 14
+              fontSize: 16
             }
           }
         },
@@ -93,6 +93,6 @@ export default {
 </script>
 <style>
 #HighChart {
-  margin: 50px 30px 0px 0px ;
+  margin: 70px 30px 0px 0px ;
 }
 </style>

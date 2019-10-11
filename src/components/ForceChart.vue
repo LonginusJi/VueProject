@@ -26,6 +26,6 @@ export default {
 <style>
 #ForceChart {
   display: block;
-  margin: 50px auto;
+  margin: 10px auto;
 }
 </style>

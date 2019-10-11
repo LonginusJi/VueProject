@@ -6,14 +6,16 @@
         <ForceChart></ForceChart>
       </v-tab-item>
       <v-tab-item>
-        <v-btn
-          class="ma-2 white--text"
-          @click="drawForceBar(),loader = 'loading'"
-          :loading="loading"
-          :disabled="loading"
-          color="blue-grey"
-        >Draw Chart</v-btn>
-        <v-btn @click="clear()">Clear Chart</v-btn>
+        <div display:middle>
+          <v-btn
+            class="my-12 white--text"
+            @click="drawForceBar(),loader = 'loading'"
+            :loading="loading"
+            :disabled="loading"
+            color="blue-grey"
+          >Draw Chart</v-btn>
+          <v-btn @click="clear()">Clear Chart</v-btn>
+        </div>
         <ForceBar ref="ForceBar"></ForceBar>
       </v-tab-item>
       <v-tab-item>
@@ -77,9 +79,5 @@ export default {
 }
 .v-parallax__image-container {
   contain: none;
-}
-.chart {
-  display: block;
-  margin: 50px auto;
 }
 </style>
