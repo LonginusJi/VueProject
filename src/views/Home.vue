@@ -3,9 +3,11 @@
     dark
     height="770"
     style="max-width:100%; max-height:100%"
-    src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+    src="http://127.0.0.1:5500/picture/76857005_p0.jpg"
   >
-    <!-- http://127.0.0.1:5500/picture/76857005_p0.jpg -->
+    <!-- choose one of the following address as the background of LogIn -->
+    <!-- http://127.0.0.1:5500/picture/76857005_p0.jpg (This address needs local serve) -->
+    <!-- https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg -->
     <v-row align="center" justify="center">
       <v-card max-width="500" class="mx-auto" id="logIn">
         <v-card-text>
