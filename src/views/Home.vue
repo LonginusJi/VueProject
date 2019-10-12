@@ -3,7 +3,7 @@
     dark
     height="770"
     style="max-width:100%; max-height:100%"
-    src="http://127.0.0.1:5500/picture/76857005_p0.jpg"
+    src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
   >
     <!-- choose one of the address as the background of LogIn -->
     <!-- http://127.0.0.1:5500/picture/76857005_p0.jpg (need local serve) -->
