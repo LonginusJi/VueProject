@@ -5,8 +5,8 @@
     style="max-width:100%; max-height:100%"
     src="http://127.0.0.1:5500/picture/76857005_p0.jpg"
   >
-    <!-- choose one of the following address as the background of LogIn -->
-    <!-- http://127.0.0.1:5500/picture/76857005_p0.jpg (This address needs local serve) -->
+    <!-- choose one of the address as the background of LogIn -->
+    <!-- http://127.0.0.1:5500/picture/76857005_p0.jpg (need local serve) -->
     <!-- https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg -->
     <v-row align="center" justify="center">
       <v-card max-width="500" class="mx-auto" id="logIn">
@@ -16,7 +16,11 @@
           <span class="caption grey--text text--darken-1">Please enter a password for your account</span>
         </v-card-text>
         <v-btn @click="logIn">Log In</v-btn>
-        <v-alert type="info" v-model="show" dismissible>You can add '/Chart' after the local address</v-alert>
+        <v-alert
+          type="info"
+          v-model="show"
+          dismissible
+        >Just enter 'charts' or 'playground' as password</v-alert>
       </v-card>
     </v-row>
   </v-parallax>
@@ -29,15 +33,15 @@ export default {
   },
   methods: {
     logIn() {
-      a: if (this.password.length >= 5) {
+    scan:  if (this.password == "playground") {
+        this.$router.push({ path: "/Playground" });
+      } else {
         for (var i = 0; i < this.password.length; i++) {
-          if (this.password.slice(i, i + 5) == "magic") {
+          if (this.password.slice(i, i + 6) == "charts") {
             this.$router.push({ path: "/Chart" });
-            break a;
+            break scan;
           }
         }
-        this.show = true;
-      } else {
         this.show = true;
       }
     }
