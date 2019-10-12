@@ -1,5 +1,7 @@
 <template>
-  <div class="chart" id="CircleChart" style="text-align:center"></div>
+  <div class="chart" id="CircleChart" style="text-align:center">
+    <div id="information">You need to set a local serve to load data</div>
+  </div>
 </template>
 
 <script>
@@ -17,6 +19,7 @@ export default {
           d.pop = +d.pop;
         });
         new CircleChart(data);
+        d3.select("#information").style("opacity", 0);
       });
     }
   }
@@ -24,8 +27,12 @@ export default {
 </script>
 
 <style>
+#information {
+  margin: 0;
+  font-size: 30px;
+}
 #CircleChart {
-  margin: 40px auto;
+  margin: 10px auto;
 }
 svg .bubbles {
   stroke-width: 1px;
