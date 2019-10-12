@@ -18,14 +18,19 @@ export default new Router({
       component: () => import('./views/Chart.vue')
     },
     {
-      path: '/HighChart',
-      name: 'HighChart',
-      component: () => import('./components/HighChart.vue')
-    },
-    {
       path: '/ForceChart',
       name: 'ForceChart',
       component: () => import('./components/ForceChart.vue')
+    },
+    {
+      path: '/ForceBar',
+      name: 'ForceBar',
+      component: () => import('./components/ForceBar.vue')
+    },
+    {
+      path: '/HighChart',
+      name: 'HighChart',
+      component: () => import('./components/HighChart.vue')
     },
     {
       path: '/CircleChart',
@@ -33,9 +38,9 @@ export default new Router({
       component: () => import('./components/CircleChart.vue')
     },
     {
-      path: '/ForceBar',
-      name: 'ForceBar',
-      component: () => import('./components/ForceBar.vue')
-    }
+      path: '/Playground',
+      name: 'Playground',
+      component: () => import('./components/Playground.vue')
+    },
   ]
 })
