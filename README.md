@@ -1,5 +1,6 @@
 # Introduction
 This is my first vue project including 4 charts using Vuetify, d3, Highcharts.
+node version: 14.x
 
 ## LogIn
 ```
