@@ -1,11 +1,13 @@
 <template>
   <div>
-    <v-tabs fixed-tabs background-color="indigo" dark grow>
+    <v-tabs v-model="tab" bg-color="indigo" color="white" grow>
       <v-tab v-for="item in items" :key="item">{{ item }}</v-tab>
-      <v-tab-item>
-        <ForceChart></ForceChart>
-      </v-tab-item>
-      <v-tab-item>
+    </v-tabs>
+    <v-window v-model="tab">
+      <v-window-item>
+        <ForceChart />
+      </v-window-item>
+      <v-window-item>
         <div display:middle>
           <v-btn
             class="my-12 white--text"
@@ -14,17 +16,13 @@
             :disabled="loading"
             color="blue-grey"
           >Draw Chart</v-btn>
-          <v-btn @click="clear()">Clear Chart</v-btn>
+          <v-btn @click="clear">Clear Chart</v-btn>
         </div>
         <ForceBar ref="ForceBar"></ForceBar>
-      </v-tab-item>
-      <v-tab-item>
-        <HighChart></HighChart>
-      </v-tab-item>
-      <v-tab-item>
-        <CircleChart></CircleChart>
-      </v-tab-item>
-    </v-tabs>
+      </v-window-item>
+      <v-window-item><HighChart /></v-window-item>
+      <v-window-item><CircleChart /></v-window-item>
+    </v-window>
   </div>
 </template>
 
@@ -42,6 +40,7 @@ export default {
         "Bar Chart",
         "Circle Chart"
       ],
+      tab: 0,
       loader: null,
       loading: false
     };

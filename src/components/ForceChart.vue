@@ -6,6 +6,7 @@
 
 <script>
 import ForceChart from './ForceChart';
+import forceChartData from '../data/miserables.json';
 export default {
   mounted() {
     this.initForceChart();
@@ -13,7 +14,7 @@ export default {
   methods: {
     initForceChart() {
       let [graph, width, height] = [
-        require('../data/miserables.json'),
+        forceChartData,
         1060,
         700,
       ];

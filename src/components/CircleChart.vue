@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     initchart() {
-      d3.csv("circle_chart.csv").then(data => {
+      d3.csv(`${import.meta.env.BASE_URL}circle_chart.csv`).then(data => {
         data.forEach(d => {
           d.gdpPercap = +d.gdpPercap;
           d.pop = +d.pop;

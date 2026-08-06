@@ -6,6 +6,7 @@
 <script>
 import ForceBar from './ForceBar';
 import * as d3 from 'd3';
+import forceBarData from '../data/netw_lv_1_kmeans_4_Clust_4fe.json';
 
 export default {
   // mounted() {
@@ -21,7 +22,7 @@ export default {
     },
     initForceBar() {
       let [data, width, height] = [
-        require('../data/netw_lv_1_kmeans_4_Clust_4fe.json'),
+        forceBarData,
         960,
         450,
       ];

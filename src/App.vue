@@ -1,18 +1,18 @@
 <template>
   <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class='headline text-uppercase d-flex align-center'>
+    <v-app-bar>
+      <v-app-bar-title class='headline text-uppercase d-flex align-center'>
         <span>&nbsp;Contribute by Jerry</span>
-      </v-toolbar-title>
+      </v-app-bar-title>
       <v-spacer></v-spacer>
-      <v-btn flat>
+      <v-btn variant="text">
         <span class='mr-2' @click='homepage()'>Log Out</span>
       </v-btn>
-    </v-toolbar>
+    </v-app-bar>
 
-    <v-content>
+    <v-main>
       <router-view></router-view>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style>
-.theme--light.application{
+.v-application{
   background: white
 }
 </style>

@@ -67,19 +67,11 @@ export default {
       .domain([0, 2 * maxSpread])
       .range([1, 0]);
 
-    var predefPathes, pathData, voronoiSeedConstraints, voronoiSeeds;
+    var pathData, voronoiSeedConstraints, voronoiSeeds;
     initData();
 
     var drawnPath, voronoiLayer;
     initLayout();
-
-    var xAccessor = d => d.x;
-    var yAccessor = d => d.y;
-    var voronoi = d3
-      .voronoi()
-      .x(xAccessor)
-      .y(yAccessor)
-      .extent([[0, 0], [width, height]]);
 
     var input = d3
       .select("input")
@@ -113,11 +105,11 @@ export default {
         .call(
           d3
             .drag()
-            .container(function(d) {
+            .container(function() {
               return this;
             })
-            .subject(function(d) {
-              var p = [d3.event.x, d3.event.y];
+            .subject(function(event) {
+              var p = [event.x, event.y];
               return [p, p];
             })
             .on("start", dragStarted)
@@ -218,15 +210,15 @@ export default {
       voronoiLayer.selectAll(".cell").remove();
     }
 
-    function dragging() {
-      var d = d3.event.subject,
-        x0 = d3.event.x,
-        y0 = d3.event.y;
+    function dragging(event) {
+      var d = event.subject,
+        x0 = event.x,
+        y0 = event.y;
 
-      d3.event.on("drag", () => {
+      event.on("drag", dragEvent => {
         var mx = maxSpread,
-          x1 = d3.event.x,
-          y1 = d3.event.y,
+          x1 = dragEvent.x,
+          y1 = dragEvent.y,
           dx = x1 - x0,
           dy = y1 - y0;
 
@@ -242,7 +234,7 @@ export default {
       });
     }
 
-    function predefPathClicked(d, i) {
+    function predefPathClicked(event, d) {
       input.node().value =
         "M100,100v300h760v-300z";
       initData();
@@ -429,7 +421,14 @@ export default {
       //end: compute Voronoï seeds, more or less close to the path
 
       //begin: draw Voronoï cells
-      var limitedCells = voronoi(voronoiSeeds).polygons();
+      var voronoi = d3.Delaunay
+        .from(voronoiSeeds, d => d.x, d => d.y)
+        .voronoi([0, 0, width, height]);
+      var limitedCells = Array.from(voronoi.cellPolygons(), (points, index) => {
+        var cell = Array.from(points);
+        cell.data = voronoiSeeds[index];
+        return cell;
+      });
       var drawnCells = voronoiLayer.selectAll(".cell").data(limitedCells);
       drawnCells = drawnCells
         .enter()

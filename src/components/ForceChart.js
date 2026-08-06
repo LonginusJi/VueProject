@@ -38,19 +38,19 @@ export default class ForceChart {
     initDrag() {
         let simulation = this.simulation
 
-        function dragStart(d) {
-            if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+        function dragStart(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
             d.fx = d.x;
             d.fy = d.y;
         }
 
-        function dragging(d) {
-            d.fx = d3.event.x;
-            d.fy = d3.event.y;
+        function dragging(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
         }
 
-        function dragEnd(d) {
-            if (!d3.event.active) simulation.alphaTarget(0);
+        function dragEnd(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
             d.fx = null;
             d.fy = null;
         }

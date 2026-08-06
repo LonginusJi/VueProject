@@ -29,7 +29,7 @@
 <script>
 export default {
   data() {
-    return { username: "", password: "", show: "" };
+    return { username: "", password: "", show: false };
   },
   methods: {
     logIn() {

@@ -65,7 +65,7 @@ export default class CircleChart {
             .style('color', 'white');
 
         // -2- Create 3 functions to show / hide the tooltip
-        this.showTooltip = d => (
+        this.showTooltip = (event, d) => (
             tooltip
             .style('opacity', 1)
             .html('Country: ' + d.country + ', Continent: ' + d.continent + ', Population: ' + d.pop / 1000000 + 'M')
@@ -142,7 +142,7 @@ export default class CircleChart {
         // ---------------------------//
 
         // What to do when one group is hovered
-        let highlight = d => {
+        let highlight = (event, d) => {
             // reduce opacity of all groups
             d3.selectAll('.bubbles').style('opacity', 0.1);
             // expect the one that is hovered

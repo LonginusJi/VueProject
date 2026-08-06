@@ -23,7 +23,7 @@ export default class ForceBar {
         this.nodes = this.data.nodes;
         this.links = this.data.links;
         this.clustNodes = this.data.clustNodes;
-        this.volumes = d3.set(this.clustNodes.map(d => d.id)).values();
+        this.volumes = Array.from(new Set(this.clustNodes.map(d => d.id)));
 
         this.xGravity = d3
             .scaleOrdinal()
@@ -85,19 +85,19 @@ export default class ForceBar {
     // ---------------------------//
     initDrag() {
         let forceSim = this.forceSim
-        let dragStart = d => {
-            if (!d3.event.active) forceSim.alphaTarget(0.3).restart();
+        let dragStart = (event, d) => {
+            if (!event.active) forceSim.alphaTarget(0.3).restart();
             d.fx = d.x;
             d.fy = d.y;
         }
 
-        let dragging = d => {
-            d.fx = d3.event.x;
-            d.fy = d3.event.y;
+        let dragging = (event, d) => {
+            d.fx = event.x;
+            d.fy = event.y;
         }
 
-        let dragEnd = d => {
-            if (!d3.event.active) forceSim.alphaTarget(0);
+        let dragEnd = (event, d) => {
+            if (!event.active) forceSim.alphaTarget(0);
             d.fx = null;
             d.fy = null;
         }
